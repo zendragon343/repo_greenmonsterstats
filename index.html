@@ -1,0 +1,136 @@
+<html>
+
+<title> Green Monster Stats!</title>
+<head>
+
+  <a id="top" class="smooth"></a>
+  <link rel="stylesheet" href="main.css">
+
+  <script>
+    function showUser(str) {
+      if (str == "") {
+          document.getElementById("txtHint").innerHTML = "";
+          return;
+      } else {
+
+
+
+
+          if (window.XMLHttpRequest) {
+            
+              // code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp = new XMLHttpRequest();
+          } else {
+              // code for IE6, IE5
+              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("txtHint").innerHTML = this.responseText;
+              }
+          };
+
+          xmlhttp.open("GET","main.php?q="+str,true);
+          xmlhttp.send();
+        }
+      }
+    </script>
+</head>
+
+
+<div class="topbar">
+  <h1> Green Monster Stats</h>
+</div>
+
+<body>
+    <div id="nav">
+     <ul>
+         <li><a href="#welcome">Welcome!</a></li>
+         <li><a href="#players">Players</a></li>
+         <li><a href="#stats">Stats</a></li>
+         <li><a href="#trivia">Trivia</a></li>
+         <li><a href="#memorabilia">Memorabilia</a></li>
+         <li><a href="#calendar">Calendar</a></li>
+      </ul>
+   </div>
+
+   <div id="page1" style="height:1000px;">
+
+     <div class="textclass">
+     <a id="#welcome"></a>
+        Welcome to Green Monster Fans and Stats!
+        <br>
+        Here you can access all of the Boston Red
+        Sox information.
+        <br>Look through the player bios
+        and averages...
+        <br> You will also be directed to other
+        sites where you can buy Red Sox accessories.
+        <br>
+        Try the trivia page, on which you will be
+        quizzed on baseball facts and personalities...
+        <br>
+        ENJOY!
+      </div>
+        <br>
+        <img src="greenmonsterimage.jpeg" alt="">
+        <img src="greenmonsterimage.jpeg" alt="">
+        <img src="greenmonsterimage.jpeg" alt="">
+        <img src="greenmonsterimage.jpeg" alt="">
+        <br>
+   </div>
+
+   <div id="page2" style="height:1000px;">
+    <a id="players" class="smooth"></a><a href="#top">Back To Top</a>
+    <br>
+    <br>
+      <img src="Player_Positions_Banner.jpeg" alt="">
+    <form>
+      <br>
+      <br>
+      <br>
+      <br>
+
+    <select name="users" onchange="showUser(this.value)">
+
+      <option value="">Select a Position</option>
+      <option value="PITCHERS">PITCHERS</option>
+      <option value="OUTFIELDERS">OUTFIELDERS</option>
+      <option value="DISABLED LIST">DISABLED LIST</option>
+      <option value="CATCHERS">CATCHERS</option>
+      <option value="INFIELDERS">INFIELDERS</option>
+      <option value="DESIGNATED HITTERS">DESIGNATED HITTERS</option>
+      </select>
+    </form>
+    <br>
+    <br>
+    <div id="txtHint"><b>Player info will be listed here...</b></div>
+
+    </div>
+
+  <br>
+  <div id="page3" style="height:1000px;">
+    <a id="stats" class="smooth"></a><a href="#top">Back To Top</a>
+      <h2>Player positions and statistics:<h2>
+  </div>
+
+  <div id="page4" style="height:1000px;">
+    <a id="trivia" class="smooth"></a>
+  </div>
+
+  <div id="page5" style="height:1000px;">
+    <a id="memorabilia" class="smooth"></a>
+      Contact page content goes here.
+  </div>
+
+  <div id="page6" style="height:1000px;">
+    <a id="calendar" class="smooth"></a>
+      Contact page content goes here....
+  </div>
+
+
+  </body>
+
+  <div class="footer"> This is where the footer content will be put in. </div>
+
+</html>
